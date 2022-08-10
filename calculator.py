@@ -13,43 +13,30 @@ def tokenize_input():
         user_input = input('> ')
         
         tokens = user_input.split(" ")
-        
-        token1 = int(tokens[1])
-        token2 = int(tokens[2])
+        operator = (tokens[0])
+        num1 = int(tokens[1])
+   
+        if len(tokens) < 3:
+            num2 = "0"
+        else:
+            num2 = int(tokens[2])
 
-        # if len(tokens) < 3:
-        #     token2 = "0"
-
-        # else:
-        #     token2 = tokens[2]
-
-        if tokens[0] == "q":
-            break
-        elif tokens[0] == "+":
-            print(add(token1, token2))
-            
+        if tokens[0] == "+":
+            print(add(num1,num2))
         elif tokens[0] == "-":
-            print(subtract(token1, token2))
-            
+            print(subtract(num1,num2))
         elif tokens[0] == "*":
-            print(multiply(token1, token2))
-            
+            print(multiply(num1,num2))
         elif tokens[0] == "/":
-            print(divide(token1, token2))
-            
+            print(divide(num1,num2))
         elif tokens[0] == "square":
-            if len(tokens) < 3:
-                tokens.append("0")
-            print(square(token1))
-            
+            print(square(num1))
         elif tokens[0] == "cube":
-            print(cube(token1))
-            
+            print(cube((num1)))
         elif tokens[0] == "pow":
-            print(power(token1, token2))
-            
+            print(power(num1, num2))
         elif tokens[0] == "mod":
-            print(mod(token1, token2))
+            print(mod(num1, num2))
             
         else:
             print("Not valid!")
